@@ -20,6 +20,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
 
     steps:
       - name: Checkout
@@ -30,6 +31,23 @@ jobs:
         with:
           node-version: 20
           cache: npm
+
+      - name: Inject .env
+        run: |
+          if [ -z "${{ secrets.REACT_APP_TMDB_APIKEY }}" ]; then
+            echo "ERROR: REACT_APP_TMDB_APIKEY is missing or empty."
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.REACT_APP_TMDB_API_TOKEN }}" ]; then
+            echo "ERROR: REACT_APP_TMDB_API_TOKEN is missing or empty."
+            exit 1
+          fi
+
+          echo "REACT_APP_TMDB_APIKEY=${{ secrets.REACT_APP_TMDB_APIKEY }}" >> .env
+          echo "REACT_APP_TMDB_API_TOKEN=${{ secrets.REACT_APP_TMDB_API_TOKEN }}" >> .env
+
+          echo ".env file created successfully"
 
       - name: Install dependencies
         run: npm ci
