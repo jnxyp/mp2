@@ -1,0 +1,55 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.genre-item {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    user-select: none;
+}
+
+.genre-item.selected {
+    background-color: #d0d0d0;
+    font-weight: bold;
+}
+
+.genre-item:hover {
+    background-color: #e0e0e0;
+}
+
+.genre-title {
+    margin: 0.5rem 0;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.movie-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,44 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+}
+
+.movie-detail-card {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.movie-poster, .no-poster {
+    flex-shrink: 0;
+}
+
+.movie-info {
+    font-size: 1.1rem;
+}
+
+.movie-navigation {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+    user-select: none;
+}
+
+#prev-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#next-link {
+    text-decoration: none;
+    color: #007bff;
+
+    justify-self: flex-end;
+}
