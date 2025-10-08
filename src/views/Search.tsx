@@ -1,6 +1,6 @@
 import './Search.css';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Movie } from '../tmdb/model';
 import { searchMovies, getImageUrl } from '../tmdb/api';
 import { Link } from 'react-router';
@@ -28,7 +28,7 @@ function Search(props: { setMovieIds: (ids: { id: number }[]) => void }) {
         }, 500);
 
         return () => clearTimeout(timeoutId);
-    }, [query]);
+    }, [query, setMovieIds]);
 
     useEffect(() => {
         let sortedMovies = [...movies];
