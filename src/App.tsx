@@ -1,13 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router';
 import Gallery from './views/Gallery';
 import Search from './views/Search';
 import Detail from './views/Detail';
-
-const apiKey = process.env.REACT_APP_TMDB_APIKEY;
-const token = process.env.REACT_APP_TMDB_API_TOKEN;
 
 function App() {
 
